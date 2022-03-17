@@ -58,15 +58,20 @@ namespace Class
             {  //string genre, int no, string name, int price
                 Console.WriteLine("Please enter the Genre: ");
                 string Genre = Console.ReadLine();
+
                 Console.WriteLine("Please enter the No: ");
                 int no = Convert.ToInt32(Console.ReadLine());
+
                 Console.WriteLine("Please enter the Name: ");
                 string name = Console.ReadLine();
+
                 Console.WriteLine("Please enter the Price: ");
-                int price = int.Parse(Console.ReadLine());
+                double price = Convert.ToDouble(Console.ReadLine());
+
 
 
                 books[i] = new Book(Genre, no, name, price);
+
             }
             do
             {
@@ -96,17 +101,14 @@ namespace Class
                     int min = Convert.ToInt32(Console.ReadLine());  // edib bize gostermelidi.
                     for (int i = 0; i < count; i++)
                     {
-                        if (!(max > books[i].Price && min < books[i].Price))
-                        {
-                            Console.WriteLine("no");
-                        }
-                        else
+                        if (max > books[i].Price && min < books[i].Price)
                         {
                             foreach (var item in books)
                             {
                                 item.Infobook();
                             }
                         }
+                        
                     }
 
 
