@@ -1,5 +1,5 @@
-﻿using System;
-using Class.Models;
+﻿using Class.Models;
+using System;
 
 namespace Class
 {
@@ -68,20 +68,25 @@ namespace Class
 
                 books[i] = new Book(Genre, no, name, price);
             }
+            do
+            {
                 Console.WriteLine("1. Filter books according to price \n" +
-                                "2.Show all books \n" +
-                                " 0.Close the program");
+                          "2.Show all books \n" +
+                          " 0.Close the program");
                 int a = Convert.ToInt32(Console.ReadLine());
-            
                 do
                 {
-                    Console.WriteLine("Re ENter");
+                    Console.WriteLine("1. Filter books according to price \n" +
+                          "2.Show all books \n" +
+                          " 0.Close the program");
 
 
-                
+
+
+                } while (!(a > 0 && a < 3));
                 if (a == 1)
                 {
-                
+
                     Console.WriteLine("maxPrice?: ");
 
 
@@ -89,26 +94,41 @@ namespace Class
                     int max = Convert.ToInt32(Console.ReadLine());// Biz her iki deyeri daxil etdikden sonra proqram yaranmis kitab
                     Console.WriteLine("minPrice?: ");                                           //// arrayindeki kitablari gonderdiyimiz min ve max price deyerlerine gore filter
                     int min = Convert.ToInt32(Console.ReadLine());  // edib bize gostermelidi.
-                for (int i = 0; i < count; i++)
-                {
-                    if (!(max > books[i].Price && min < books[i].Price))
+                    for (int i = 0; i < count; i++)
                     {
-                        Console.WriteLine("no");
-                    }
-                    else
-                    {
-                        foreach (var item in books)
+                        if (!(max > books[i].Price && min < books[i].Price))
                         {
-                            item.Infobook();
+                            Console.WriteLine("no");
+                        }
+                        else
+                        {
+                            foreach (var item in books)
+                            {
+                                item.Infobook();
+                            }
                         }
                     }
-                }   
-               
+
 
                 }
-            }
-           
+                if (a == 2)
+                {
+                    // Eger daxil etdiyimiz deyer 2 olarsa butun kitablar gosterilmelidir ve sonra menu penceresi gorsenmelidir yene
+                    foreach (var item in books)
+                    {
+                        item.Infobook();
+                    }
+                }
+                if (a == 0)
+                {
+                    //Eger daxil etdiyimiz deyer 0 olarsa proqram baglanmalidir
+                    return;
+                }
 
-            }
+            } while (true);
+
+
+
         }
-    }}
+    }
+}
