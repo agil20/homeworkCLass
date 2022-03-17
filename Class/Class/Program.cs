@@ -78,7 +78,7 @@ namespace Class
                     Console.WriteLine("Re ENter");
 
 
-                } while (a != 1 || a != 0 || a != 2);
+                
                 if (a == 1)
                 {
                 
