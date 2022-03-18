@@ -75,45 +75,56 @@ namespace Class
             int a;
             do
             {
-                Console.WriteLine("1. Filter books according to price \n" +
-                      "2.Show all books \n" +
-                      " 0.Close the program");
-                 a = Convert.ToInt32(Console.ReadLine());
-
-
-                switch (a)
+                do
                 {
-                    case 1:
+                    Console.WriteLine("1. Filter books according to price \n" +
+                          "2.Show all books \n" +
+                          " 0.Close the program");
+                    a = Convert.ToInt32(Console.ReadLine());
 
-                       
-                        Console.WriteLine("maxPrice?: ");                                  
-                        int max = Convert.ToInt32(Console.ReadLine());                            
 
-                        Console.WriteLine("minPrice?: ");
-                        int min = Convert.ToInt32(Console.ReadLine());
+                    switch (a)
+                    {
+                        case 1:
 
-                        for (int i = 0; i < count; i++)
-                        {
-                            if (max > books[i].Price && min < books[i].Price)
+
+                            Console.WriteLine("maxPrice?: ");
+                            int max = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("minPrice?: ");
+                            int min = Convert.ToInt32(Console.ReadLine());
+
+                            for (int i = 0; i < count; i++)
                             {
-                                foreach (var item in books)
+                                if (max > books[i].Price && min < books[i].Price)
                                 {
-                                    item.Infobook();
+                                    foreach (var item in books)
+                                    {
+                                        item.Infobook();
+                                    }
                                 }
-                            }
 
-                        }break;
-                        case 2: 
-                        foreach (var item in books)
-                        {
-                            item.Infobook();
-                        } break;
-                        case 3: return;
-                    default: break;
-                }
-              
-            } while (!(a > -1 && a < 3));
-        } } }
+                            }
+                            break;
+                        case 2:
+                            foreach (var item in books)
+                            {
+                                item.Infobook();
+                            }
+                            break;
+                        
+                        default: return;
+                    }
+
+                } while (!(a > -1 && a < 3));
+            }  
+            
+            while (true);
+
+
+        }
+    }
+}
 
 
 
