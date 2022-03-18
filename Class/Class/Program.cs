@@ -73,8 +73,8 @@ namespace Class
             }
 
             int a;
-            do
-            {
+            
+            
                 do
                 {
                     Console.WriteLine("1. Filter books according to price \n" +
@@ -119,12 +119,12 @@ namespace Class
                 } while (!(a > -1 && a < 3));
             }  
             
-            while (true);
+            
 
 
         }
     }
-}
+
 
 
 
