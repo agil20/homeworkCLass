@@ -88,7 +88,7 @@ namespace Class
 
 
 
-                } while (!(a > 0 && a < 3));
+                } while (!(a > -1 && a < 3));
                 if (a == 1)
                 {
 
