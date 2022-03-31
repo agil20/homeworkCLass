@@ -96,15 +96,19 @@ namespace Class
 
                             for (int i = 0; i < count; i++)
                             {
-                                if (max > books[i].Price && min < books[i].Price)
+                            foreach (var item in books)
+                            {
+                               
+                          
+                            if (max >= books[i].Price && min <= books[i].Price)
                                 {
-                                    foreach (var item in books)
-                                    {
-                                        item.Infobook();
-                                    }
-                                }
-
+                                item.Infobook();
+                                break;
                             }
+                         
+                              
+                            }
+                              }
                             break;
                         case 2:
                             foreach (var item in books)
